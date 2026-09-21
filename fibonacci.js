@@ -14,3 +14,17 @@ function fibs(n) {
 
   return result
 }
+
+function fibsRec(n) {
+  let sequence = []
+
+  if (n === 0) return []
+  if (n === 1) return [0]
+  if (n === 2) return [0, 1]
+
+  const result = fibsRec(n - 1)
+  sequence = result
+  sequence.push(result.at(-1) + result.at(-2))
+
+  return sequence
+}
