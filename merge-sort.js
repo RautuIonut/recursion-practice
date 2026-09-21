@@ -22,16 +22,14 @@ function merge(a, b) {
   return result
 }
 
-  function mergeSort(arr) {
-    const low = 0
-    const high = arr.length - 1
-    const mid = Math.floor(arr.length / 2)
+function mergeSort(arr) {
+  const low = 0
+  const high = arr.length - 1
+  const mid = Math.floor(arr.length / 2)
 
-    if (arr.length <= 1) return arr
+  if (arr.length <= 1) return arr
 
-    const left = mergeSort(arr.slice(low, mid))
-    const right = mergeSort(arr.slice(mid))
-    return merge(left, right)
-  }
-
-console.log(mergeSort([2, 5, 1, 4, 10, 3]))
+  const left = mergeSort(arr.slice(low, mid))
+  const right = mergeSort(arr.slice(mid))
+  return merge(left, right)
+}
